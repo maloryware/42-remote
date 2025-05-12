@@ -33,34 +33,8 @@ static void check(int mine, int theirs)
 
 int	main()
 {
-	t_flags	*myflags;
 	int		mine;
 	int		theirs;
-
-	myflags = fl_init();
-
-	// print_char //
-	title("print_char");
-	myflags->zero_pad = TRUE;
-	myflags->padding_side = PAD_RIGHT;
-	myflags->padding_length = 8;
-
-
-	mine = print_char('D', myflags);
-	lb();
-	theirs = printf("%-8c", 'D');
-
-	check(mine, theirs);
-	// print_dec_int //
-	title("print_dec_int");
-	myflags->zero_pad = TRUE;
-	myflags->padding_side = PAD_LEFT;
-	myflags->padding_length = 21;
-
-	mine = print_dec_int(127, myflags);
-	lb();
-	theirs = printf("%021d", 127);
-	check(mine, theirs);
 
 	// final //
 	title("ft_printf FULL");
@@ -69,6 +43,4 @@ int	main()
 	theirs = printf("\nTests (they): \nInt - %021d\nChar - %-3c\nHex: %#.0x|%X", 128, '\200', 539, 539);
 	check(mine, theirs);
 	printf("\n");
-	free(myflags);
-
 }
