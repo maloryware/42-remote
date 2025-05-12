@@ -104,6 +104,7 @@ gp() {
     fi
     cd ~/temp && cg && clra && clrinv # && rm -rf ./evals/ && rm -rf ./piscine-reloaded/ex05/
     yes | cp -rf ~/temp/* ~/42-remote
+    rm -f ~/42-remote/.bashrc
     cp -f ~/.bashrc ~/42-remote/.bashrc
     dconf dump /org/gnome/terminal/legacy/profiles:/ > ~/42-remote/profiles.dconf
     cd ~/42-remote
@@ -127,5 +128,4 @@ alias .="cd ~"
 alias ..="godown"
 
 alias nrm="norminette -R CheckForbiddenSourceHeader"
-alias nrn="francinette"
 alias bye="gp && gnome-session-quit --force"
