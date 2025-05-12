@@ -22,6 +22,7 @@ alias empty-trash="rm -rf ~/.local/share/Trash/*"
 alias clrb="rm -rf output build"
 alias cflags="cc -Wextra -Wall -Werror"
 alias mr="make run"
+alias rld="source ~/.bashrc"
 
 preview-lsc() {
 	export LS_COLORS="$1"
