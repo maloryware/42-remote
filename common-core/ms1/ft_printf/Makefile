@@ -58,7 +58,7 @@ run: lmain $(NAME)
 	@echo
 
 debug: $(NAME) # run
-	cc $(CFLAGS) -ggdb3 -o main_test.out $(LMAIN) $(NAME)
+	cc $(CFLAGS) -fsanitize=address -g -ggdb3 -o main_test.out $(LMAIN) $(NAME)
 	@make clean
 	@$(VALGRIND) ./main_test.out
 	@echo
