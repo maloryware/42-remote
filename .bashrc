@@ -125,7 +125,6 @@ godown() {
 
 alias .="cd ~"
 alias ..="godown"
-alias francinette="/home/davpache/francinette/tester.sh" # ts pmo U+1F940 </3
 
 alias nrm="norminette -R CheckForbiddenSourceHeader"
 alias nrn="francinette"
