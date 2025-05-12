@@ -107,6 +107,7 @@ gp() {
     cd ~/42-remote
     git add . && git commit -m $msg && gitfix
     git push --force
+    rm -rf ~/temp
     cd $curr
 }
 
