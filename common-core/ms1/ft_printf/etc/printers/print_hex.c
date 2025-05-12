@@ -72,14 +72,16 @@ int	print_hex(unsigned int hex, char hcase, t_flags *f)
 	char		*out;
 	const char	*set;
 
-	len = 0;
 	set = get_case(hcase);
+	out = ft_atoh(hex, set);
+	len = ft_strlen(out);
+	len = handle_padding(f, len, PAD_LEFT);
 	if (f->pad_0x)
 		write(1, get_padding_case(hcase), 2);
 	if (f->pad_0x)
-		len = 2;
-	out = ft_atoh(hex, set);
-	ft_putstr_fd(out, ft_strlen(out));
+		len += 2;
+	len = handle_padding(f, len, PAD_RIGHT);
+	ft_putstr_fd(out, 1);
 	free(out);
 	return (len);
 }

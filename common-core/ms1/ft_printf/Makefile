@@ -1,3 +1,5 @@
+# To test program, execute 'make run'. #
+
 NAME = libftprintf.a
 
 ETC = etc
@@ -40,8 +42,8 @@ $(NAME): $(OBJ)
 list: $(NAME)
 	@ar -t $(NAME) | sed 's/\.o/.c/g' | awk '{print "#include \"" $$1 "\""}'
 
-run: $(NAME) $(OBJ)
-	@$(CC) $(CFLAGS) -o main_test.out main.c $(NAME)
+run: $(NAME) $(OBJ) $(LOCMAIN)
+	@$(CC) $(CFLAGS) -o main_test.out __loc_main.c $(NAME)
 	@echo 
 	@echo '|-----TEST-----|'
 	@echo 
@@ -51,7 +53,10 @@ run: $(NAME) $(OBJ)
 	@echo '|-----TEST-----|'
 	@echo
 	@make clean
+	@rm main_test.out
 
+$(LOCMAIN):
+	
 clean:
 	@rm -f $(OBJ)
 
