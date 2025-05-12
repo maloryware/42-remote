@@ -8,6 +8,7 @@ LIBS = $(ETC)/stdlibs
 PRNT = $(ETC)/printers
 
 LMAIN = __loc_main.c
+
 # ------------- #
 
 STDLIBS = $(LIBS)/mini_libft.c $(LIBS)/substr.c \
@@ -26,6 +27,7 @@ SRC = ft_printf.c \
 
 OBJ = $(SRC:.c=.o)
 
+VALGRIND = valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --keep-stacktraces=alloc-and-free
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
@@ -44,7 +46,8 @@ list: $(NAME)
 	@ar -t $(NAME) | sed 's/\.o/.c/g' | awk '{print "#include \"" $$1 "\""}'
 
 run: lmain $(NAME)
-	$(CC) $(CFLAGS) -o main_test.out __loc_main.c $(NAME)
+	$(CC) $(CFLAGS) -o main_test.out $(LMAIN) $(NAME)
+	@make clean
 	@echo 
 	@echo '|-----TEST-----|'
 	@echo 
@@ -53,8 +56,18 @@ run: lmain $(NAME)
 	@echo
 	@echo '|-----TEST-----|'
 	@echo
+
+debug: $(NAME) # run
+	cc $(CFLAGS) -ggdb3 -o main_test.out $(LMAIN) $(NAME)
 	@make clean
-	@rm main_test.out
+	@$(VALGRIND) ./main_test.out
+	@echo
+	@echo
+	@echo
+	@echo
+	@echo
+	@echo
+	@./main_test.out
 
 lmain: $(LMAIN)
 

@@ -23,6 +23,7 @@ alias clrb="rm -rf output build"
 alias cflags="cc -Wextra -Wall -Werror"
 alias mr="make run"
 alias rld="source ~/.bashrc"
+alias valgrind-full="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose"
 
 preview-lsc() {
 	export LS_COLORS="$1"

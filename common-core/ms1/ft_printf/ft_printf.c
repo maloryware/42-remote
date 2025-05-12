@@ -24,7 +24,7 @@
 #include "etc/printers/print_uint.c"
 #include "etc/format_delegator.c"
 #include "etc/aux.c"
-#include "main.c" */
+#include "__loc_main.c" */
 
 t_flags	*fl_init(void)
 {
@@ -57,6 +57,7 @@ int	ft_printf(const char *format, ...)
 {
 	t_flags			*f;
 	int				index;
+	int				len;
 	va_list			params;
 
 	f = fl_init();
@@ -74,5 +75,7 @@ int	ft_printf(const char *format, ...)
 		reset_flags(f);
 		index++;
 	}
-	return (f->len);
+	len = f->len;
+	free(f);
+	return (len);
 }

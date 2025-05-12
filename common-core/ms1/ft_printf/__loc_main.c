@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 static void	title(char *title)
 {
@@ -66,4 +68,7 @@ int	main()
 	lb();
 	theirs = printf("\nTests (they): \nInt - %021d\nChar - %-3c\nHex: %#.0x|%X", 128, '\200', 539, 539);
 	check(mine, theirs);
+	printf("\n");
+	free(myflags);
+
 }

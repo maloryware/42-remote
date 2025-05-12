@@ -14,8 +14,14 @@
 
 int	print_uint(unsigned int uint, t_flags *flags)
 {
-	int	len = 0;
-	(void) uint;
-	(void) flags;
+	char	*out;
+	int		len;
+
+	out = ft_itoa(uint);
+	len = ft_strlen(out);
+	len = handle_padding(flags, len, PAD_LEFT);
+	write(1, out, ft_strlen(out));
+	len = handle_padding(flags, len, PAD_RIGHT);
+	free(out);
 	return (len);
 }

@@ -11,6 +11,13 @@
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+#include <stdlib.h>
+
+static void	set_padding_length(t_flags *f, char *tofree)
+{
+	f->padding_length = atoi(tofree);
+	free(tofree);
+}
 
 int	format_delegator(
 	int i,
@@ -26,7 +33,7 @@ int	format_delegator(
 	i = handle_flags(i++, format, f);
 	while (matches(format[i + len], "0123456789"))
 		len++;
-	f->padding_length = atoi(ft_substr(format, i, len));
+	set_padding_length(f, ft_substr(format, i, len));
 	i += len;
 	if (format[i] == 'c')
 		f->len += print_char(va_arg(params, int), f);

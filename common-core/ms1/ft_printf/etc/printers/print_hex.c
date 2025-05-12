@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "../../ft_printf.h"
+#include <stdlib.h>
+#include <string.h>
 
 static char	*get_case(char hcase)
 {
@@ -39,12 +41,14 @@ static char	*reverse_hex(char *hex, int len)
 	out = malloc(len);
 	while (len-- >= 0)
 		out[len] = hex[i++];
+	free(hex);
+	hex = NULL;
 	return (out);
 }
 
 static char	*ft_atoh(int hex, const char *set)
 {
-	char	*out;
+	char	*last;
 	int		i;
 	int		hex_tmp;
 
@@ -55,15 +59,16 @@ static char	*ft_atoh(int hex, const char *set)
 		hex_tmp /= 16;
 		i++;
 	}
-	out = malloc(i);
+	last = malloc(i);
 	i = 0;
 	while (hex)
 	{
-		out[i] = set[hex % 16];
+		last[i] = set[hex % 16];
 		i++;
 		hex /= 16;
 	}
-	return (reverse_hex(out, i));
+	last = reverse_hex(last, i);
+	return (last);
 }
 
 int	print_hex(unsigned int hex, char hcase, t_flags *f)
@@ -83,5 +88,6 @@ int	print_hex(unsigned int hex, char hcase, t_flags *f)
 	len = handle_padding(f, len, PAD_RIGHT);
 	ft_putstr_fd(out, 1);
 	free(out);
+	out = NULL;
 	return (len);
 }

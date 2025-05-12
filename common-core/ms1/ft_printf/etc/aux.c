@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+#include <stdlib.h>
 
 int	matches(char c, char *any)
 {
