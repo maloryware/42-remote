@@ -52,6 +52,7 @@ typedef struct s_flags
 	int		padding_side;
 	int		padding_length;
 	int		len;
+	int		early_break;
 }	t_flags;
 
 t_flags	*fl_init(void);

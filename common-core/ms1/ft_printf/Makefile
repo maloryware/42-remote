@@ -7,6 +7,7 @@ ETC = etc
 LIBS = $(ETC)/stdlibs
 PRNT = $(ETC)/printers
 
+LMAIN = __loc_main.c
 # ------------- #
 
 STDLIBS = $(LIBS)/mini_libft.c $(LIBS)/substr.c \
@@ -42,8 +43,8 @@ $(NAME): $(OBJ)
 list: $(NAME)
 	@ar -t $(NAME) | sed 's/\.o/.c/g' | awk '{print "#include \"" $$1 "\""}'
 
-run: $(NAME) $(OBJ) $(LOCMAIN)
-	@$(CC) $(CFLAGS) -o main_test.out __loc_main.c $(NAME)
+run: lmain $(NAME)
+	$(CC) $(CFLAGS) -o main_test.out __loc_main.c $(NAME)
 	@echo 
 	@echo '|-----TEST-----|'
 	@echo 
@@ -55,8 +56,11 @@ run: $(NAME) $(OBJ) $(LOCMAIN)
 	@make clean
 	@rm main_test.out
 
-$(LOCMAIN):
-	
+lmain: $(LMAIN)
+
+$(LMAIN):
+	@curl -o $(LMAIN) 'https://raw.githubusercontent.com/maloryware/42-remote/refs/heads/main/common-core/ms1/ft_printf/__loc_main.c'
+
 clean:
 	@rm -f $(OBJ)
 

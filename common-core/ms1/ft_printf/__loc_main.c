@@ -62,8 +62,8 @@ int	main()
 
 	// final //
 	title("ft_printf FULL");
-	mine = ft_printf("Tests (mine): \nInt - %021d\nChar - %-3c\nHex: %#x|%X", 128, 'D', 539, 539);
+	mine = ft_printf("\nTests (mine): \nInt - %021d\nChar - %-3c\nHex: %#.0x|%X", 128, '\200', 539, 539);
 	lb();
-	theirs = printf("Tests (they): \nInt - %021d\nChar - %-3c\nHex: %#x|%X", 128, 'D', 539, 539);
+	theirs = printf("\nTests (they): \nInt - %021d\nChar - %-3c\nHex: %#.0x|%X", 128, '\200', 539, 539);
 	check(mine, theirs);
 }

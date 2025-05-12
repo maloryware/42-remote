@@ -12,8 +12,6 @@
 
 #include "../ft_printf.h"
 
-// TODO: build function properly to handle things as necessary
-
 int	format_delegator(
 	int i,
 	va_list params,
@@ -43,7 +41,7 @@ int	format_delegator(
 	else if (format[i] == 'x' || format[i] == 'X')
 		f->len += print_hex(va_arg(params, unsigned int), format[i], f);
 	else if (format[i] == '%')
-		write(1, "%%", 1);
+		write(1, "%%", (f->len++) * 0 + 1);
 	return (i);
 }
 
@@ -53,13 +51,15 @@ int	handle_flags(
 	t_flags *f
 )
 {
-	while (matches(format[pos], "#0-+ "))
+	while (matches(format[pos], "#0-+ ."))
 	{
-		f->pad_0x = (format[pos] == '#');
-		f->padding_side = (format[pos] == '-');
-		f->force_sign = (format[pos] == '+');
-		f->space_for_sign = (format[pos] == ' ' && !f->force_sign);
-		f->zero_pad = (format[pos] == '0' && !f->padding_side);
+		f->pad_0x = (format[pos] == '#' || f->pad_0x);
+		f->padding_side = (format[pos] == '-' || f->padding_side);
+		f->force_sign = (format[pos] == '+' || f->force_sign);
+		f->space_for_sign = ((format[pos] == ' ' || f->space_for_sign)
+				&& !f->force_sign);
+		f->zero_pad = ((format[pos] == '0' || f->zero_pad)
+				&& !f->padding_side);
 		pos++;
 	}
 	return (pos);
