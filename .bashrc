@@ -22,6 +22,8 @@ alias empty-trash="rm -rf ~/.local/share/Trash/*"
 alias clrb="rm -rf output build"
 alias cflags="cc -Wextra -Wall -Werror"
 alias mr="make run"
+alias mc="make clean"
+alias mfc="make fclean"
 alias rld="source ~/.bashrc"
 alias valgrind-full="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --keep-stacktraces=alloc-and-free"
 
