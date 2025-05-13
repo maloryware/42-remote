@@ -12,7 +12,7 @@
 
 #include "../../ft_printf.h"
 
-static void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	char	*ptr;
 	size_t	i;
@@ -24,7 +24,7 @@ static void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
-static void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 	size_t	max_size;

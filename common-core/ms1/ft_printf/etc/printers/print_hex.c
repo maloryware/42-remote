@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "../../ft_printf.h"
-#include <stdlib.h>
-#include <string.h>
 
 static char	*get_case(char hcase)
 {
@@ -38,7 +36,7 @@ static char	*reverse_hex(char *hex, int len)
 	char	*out;
 
 	i = 0;
-	out = malloc(len);
+	out = ft_calloc(len + 1, sizeof(char));
 	while (len-- >= 0)
 		out[len] = hex[i++];
 	free(hex);
@@ -59,7 +57,7 @@ static char	*ft_atoh(int hex, const char *set)
 		hex_tmp /= 16;
 		i++;
 	}
-	last = malloc(i);
+	last = ft_calloc(i + 1, sizeof(char));
 	i = 0;
 	while (hex)
 	{
@@ -79,6 +77,8 @@ int	print_hex(unsigned int hex, char hcase, t_flags *f)
 
 	set = get_case(hcase);
 	out = ft_atoh(hex, set);
+	if (!out)
+		ft_strlcpy(out, "0", 1);
 	len = ft_strlen(out);
 	len = handle_padding(f, len, PAD_LEFT);
 	if (f->pad_0x)

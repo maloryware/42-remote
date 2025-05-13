@@ -78,6 +78,8 @@ int		print_hex(unsigned int hex, char hcase, t_flags *flags);
 char	*ft_itoa(int n);
 int		ft_atoi(const char *nptr);
 
+void	*ft_calloc(size_t nmemb, size_t size);
+void	*ft_memset(void *s, int c, size_t n);
 char	*ft_strdup(const char *s);
 size_t	ft_strlen(const char *str);
 void	ft_putchar_fd(int a, int fd);
