@@ -8,7 +8,7 @@ LIBS = $(ETC)/stdlibs
 PRNT = $(ETC)/printers
 
 LMAIN = __loc_main.c
-LMAIN = usr_tests.c
+TMAIN = usr_tests.c
 
 # ------------- #
 
@@ -58,9 +58,12 @@ run: lmain $(NAME)
 	@echo '|-----TEST-----|'
 	@echo
 
-test: $(NAME)
+test: $(NAME) tmain
+	cc $(CFLAGS) -fsanitize=address -g -ggdb3 -o usr_tests.out $(TMAIN) $(NAME)
+	@make clean
+	@./usr_tests.out
 
-debug: $(NAME) # run
+debug: $(NAME) run
 	cc $(CFLAGS) -fsanitize=address -g -ggdb3 -o main_test.out $(LMAIN) $(NAME)
 	@make clean
 	@$(VALGRIND) ./main_test.out
@@ -83,7 +86,7 @@ $(TMAIN):
 	@curl -o $(TMAIN) 'https://raw.githubusercontent.com/maloryware/42-remote/refs/heads/main/common-core/ms1/ft_printf/usr_tests.c'
 
 clean:
-	@rm -f $(OBJ)
+	@rm -f $(OBJ) $(TMAIN) $(LMAIN) main_test.out usr_tests.out
 
 fclean: clean
 	@rm -f $(NAME)
