@@ -69,7 +69,7 @@ static char	*ft_atoh(int hex, const char *set)
 	return (last);
 }
 
-int	print_hex(unsigned int hex, char hcase, t_flags *f)
+int	print_hex(unsigned int hex, char hcase, t_pdata *f)
 {
 	int			len;
 	char		*out;

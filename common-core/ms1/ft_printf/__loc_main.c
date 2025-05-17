@@ -51,11 +51,11 @@ int	main()
 	void *ptr = malloc(3);
 	// final //
 	title("ft_printf FULL");
-	mine = ft_printf("\nTests (mine): \nInt - %021d\nChar - %-3c\nHex: %#.0x|%X\nPointer: %p\nString: %s",
-		128, '\200', 539, 539, ptr, "a string!");
+	mine = ft_printf("\nTests (mine): \nInt - %021d\nChar - %-3c\nHex: %#.0x|%X\nPointer: %p\nString: %s\nUnsigned: %u",
+		128, '\200', 539, 539, ptr, "a string!", 429496729);
 	lb();
-	theirs = printf("\nTests (they): \nInt - %021d\nChar - %-3c\nHex: %#.0x|%X\nPointer: %p\nString: %s",
-		128, '\200', 539, 539, ptr, "a string!");
+	theirs = printf("\nTests (they): \nInt - %021d\nChar - %-3c\nHex: %#.0x|%X\nPointer: %p\nString: %s\nUnsigned: %u",
+		128, '\200', 539, 539, ptr, "a string!", 429496729);
 	check(mine, theirs);
 	printf("\n");
 }

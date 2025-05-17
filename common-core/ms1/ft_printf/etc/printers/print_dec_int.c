@@ -12,7 +12,7 @@
 
 #include "../../ft_printf.h"
 
-int	print_dec_int(int n, t_flags *flags)
+int	print_dec_int(int n, t_pdata *flags)
 {
 	char	*out;
 	int		len;

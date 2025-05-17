@@ -6,13 +6,13 @@
 /*   By: Mal <malory@onenetbeyond.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 22:47:38 by Mal               #+#    #+#             */
-/*   Updated: 2025/05/10 22:47:39 by Mal              ###   ########.fr       */
+/*   Updated: 2025/05/17 02:09:46 by Mal              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf.h"
 
-int	print_char(int c, t_flags *f)
+int	print_char(int c, t_pdata *f)
 {
 	int		len;
 	char	ch;

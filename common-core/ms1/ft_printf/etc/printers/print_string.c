@@ -12,12 +12,11 @@
 
 #include "../../ft_printf.h"
 
-int	print_string(char *str, t_flags *flags)
+int	print_string(char *str, t_pdata *flags)
 {
 	int	len;
 
-	len = ft_strlen(str);
-	len = handle_padding(flags, len, PAD_LEFT);
+	len = handle_padding(flags, ft_strlen(str), PAD_LEFT);
 	ft_putstr(str);
 	len = handle_padding(flags, len, PAD_RIGHT);
 	return (len);

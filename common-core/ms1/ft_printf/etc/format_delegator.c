@@ -13,7 +13,7 @@
 #include "../ft_printf.h"
 #include <stdlib.h>
 
-static void	set_padding_length(t_flags *f, char *tofree)
+static void	set_padding_length(t_pdata *f, char *tofree)
 {
 	f->padding_length = atoi(tofree);
 	free(tofree);
@@ -23,7 +23,7 @@ int	format_delegator(
 	int i,
 	va_list params,
 	const char *format,
-	t_flags *f
+	t_pdata *f
 )
 {
 	int	len;
@@ -55,7 +55,7 @@ int	format_delegator(
 int	handle_flags(
 	int pos,
 	const char *format,
-	t_flags *f
+	t_pdata *f
 )
 {
 	while (matches(format[pos], "#0-+ ."))

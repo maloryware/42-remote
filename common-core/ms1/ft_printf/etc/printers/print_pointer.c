@@ -37,14 +37,15 @@ static char	*htol(unsigned long long addr)
 	return (out);
 }
 
-int	print_pointer(void *ptr, t_flags *flags)
+int	print_pointer(void *ptr, t_pdata *flags)
 {
 	int		len;
 	char	*out;
 
 	out = htol((unsigned long long) ptr);
 	len = ft_strlen(out);
-	ft_putstr(out);
 	len = handle_padding(flags, len, PAD_LEFT);
+	ft_putstr(out);
+	len = handle_padding(flags, len, PAD_RIGHT);
 	return (len);
 }

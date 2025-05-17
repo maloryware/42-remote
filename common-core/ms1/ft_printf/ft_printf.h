@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: Mal <malory@onenetbeyond.org>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/17 02:09:20 by Mal               #+#    #+#             */
+/*   Updated: 2025/05/17 02:09:22 by Mal              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By: Mal <malory@onenetbeyond.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:48:53 by Mal          #+#    #+#             */
@@ -43,7 +55,7 @@
  *		
  *		
  */
-typedef struct s_flags
+typedef struct s_pdata
 {
 	int		space_for_sign;
 	int		force_sign;
@@ -53,27 +65,27 @@ typedef struct s_flags
 	int		padding_length;
 	int		len;
 	int		early_break;
-}	t_flags;
+}	t_pdata;
 
-t_flags	*fl_init(void);
+t_pdata	*fl_init(void);
 
 int		ft_printf(const char *format, ...);
 
 int		matches(char c, char *any);
-int		handle_padding(t_flags *flags, int len, int side);
+int		handle_padding(t_pdata *flags, int len, int side);
 
 int		format_delegator(
-			int index, va_list params, const char *format, t_flags *flags);
+			int index, va_list params, const char *format, t_pdata *flags);
 
 int		handle_flags(
-			int index, const char *format, t_flags *flags);
+			int index, const char *format, t_pdata *flags);
 
-int		print_char(int c, t_flags *flags);
-int		print_dec_int(int n, t_flags *flags);
-int		print_pointer(void *ptr, t_flags *flags);
-int		print_string(char *str, t_flags *flags);
-int		print_uint(unsigned int uint, t_flags *flags);
-int		print_hex(unsigned int hex, char hcase, t_flags *flags);
+int		print_char(int c, t_pdata *flags);
+int		print_dec_int(int n, t_pdata *flags);
+int		print_pointer(void *ptr, t_pdata *flags);
+int		print_string(char *str, t_pdata *flags);
+int		print_uint(unsigned int uint, t_pdata *flags);
+int		print_hex(unsigned int hex, char hcase, t_pdata *flags);
 
 char	*ft_itoa(int n);
 int		ft_atoi(const char *nptr);

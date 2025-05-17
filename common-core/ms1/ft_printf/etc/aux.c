@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-#include <stdlib.h>
 
 int	matches(char c, char *any)
 {
@@ -24,7 +23,7 @@ int	matches(char c, char *any)
 	return (0);
 }
 
-int	handle_padding(t_flags *flags, int len, int side)
+int	handle_padding(t_pdata *flags, int len, int side)
 {
 	char	*pad;
 	int		pad_len;

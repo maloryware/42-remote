@@ -12,22 +12,22 @@
 
 #include "ft_printf.h"
 
-t_flags	*fl_init(void)
+t_pdata	*fl_init(void)
 {
-	t_flags		*out;
+	t_pdata		*data;
 
-	out = malloc(sizeof(t_flags));
-	out->pad_0x = FALSE;
-	out->zero_pad = FALSE;
-	out->padding_side = PAD_LEFT;
-	out->padding_length = 0;
-	out->space_for_sign = FALSE;
-	out->force_sign = FALSE;
-	out->len = 0;
-	return (out);
+	data = malloc(sizeof(t_pdata));
+	data->pad_0x = FALSE;
+	data->zero_pad = FALSE;
+	data->padding_side = PAD_LEFT;
+	data->padding_length = 0;
+	data->space_for_sign = FALSE;
+	data->force_sign = FALSE;
+	data->len = 0;
+	return (data);
 }
 
-void	reset_flags(t_flags *data)
+void	reset_pdata(t_pdata *data)
 {
 	data->pad_0x = FALSE;
 	data->zero_pad = FALSE;
@@ -41,7 +41,7 @@ void	reset_flags(t_flags *data)
 
 int	ft_printf(const char *format, ...)
 {
-	t_flags			*f;
+	t_pdata			*f;
 	int				index;
 	int				len;
 	va_list			params;
@@ -58,7 +58,7 @@ int	ft_printf(const char *format, ...)
 			write(1, &format[index], 1);
 			f->len++;
 		}
-		reset_flags(f);
+		reset_pdata(f);
 		index++;
 	}
 	len = f->len;
