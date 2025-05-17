@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-#include "get_next_line_utils_bonus.c"
+/* #include "get_next_line_utils_bonus.c" */
 
 char	*get_next_line(int fd)
 {
@@ -35,7 +35,7 @@ char	*get_next_line(int fd)
 	return (out);
 }
 
-int main()
+/* int main()
 {
 	int		tmp;
 	int		tmp2;
@@ -49,4 +49,4 @@ int main()
 		printf("%s", s);
 		printf("%s", ss);
 	}
-}
+} */

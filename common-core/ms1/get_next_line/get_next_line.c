@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include "get_next_line_utils.c"
+/* #include "get_next_line_utils.c" */
 
 char	*get_next_line(int fd)
 {
@@ -35,7 +35,7 @@ char	*get_next_line(int fd)
 	return (out);
 }
 
-int main()
+/* int main()
 {
 	int		tmp;
 	int		i;
@@ -54,4 +54,4 @@ int main()
 			i++;
 	}
 	free(s);
-}
+} */
