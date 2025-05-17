@@ -12,20 +12,6 @@
 
 #include "ft_printf.h"
 
-/* #include "etc/stdlibs/mini_libft.c"
-#include "etc/stdlibs/substr.c"
-#include "etc/stdlibs/atoi.c"
-#include "etc/stdlibs/itoa.c"
-#include "etc/printers/print_char.c"
-#include "etc/printers/print_dec_int.c"
-#include "etc/printers/print_hex.c"
-#include "etc/printers/print_pointer.c"
-#include "etc/printers/print_string.c"
-#include "etc/printers/print_uint.c"
-#include "etc/format_delegator.c"
-#include "etc/aux.c"
-#include "__loc_main.c" */
-
 t_flags	*fl_init(void)
 {
 	t_flags		*out;

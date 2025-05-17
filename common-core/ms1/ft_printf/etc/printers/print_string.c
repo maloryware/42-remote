@@ -12,9 +12,13 @@
 
 #include "../../ft_printf.h"
 
-int print_string(char *str, t_flags *flags)
+int	print_string(char *str, t_flags *flags)
 {
-	(void) flags;
-	(void) str;
-	return (0);
+	int	len;
+
+	len = ft_strlen(str);
+	len = handle_padding(flags, len, PAD_LEFT);
+	ft_putstr(str);
+	len = handle_padding(flags, len, PAD_RIGHT);
+	return (len);
 }

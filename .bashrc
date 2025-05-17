@@ -132,3 +132,4 @@ alias ..="godown"
 
 alias nrm="norminette -R CheckForbiddenSourceHeader"
 alias bye="gp && gnome-session-quit --force"
+alias qbye="gnome-session-quit --force"

@@ -86,10 +86,10 @@ $(TMAIN):
 	@curl -o $(TMAIN) 'https://raw.githubusercontent.com/maloryware/42-remote/refs/heads/main/common-core/ms1/ft_printf/usr_tests.c'
 
 clean:
-	@rm -f $(OBJ) $(TMAIN) $(LMAIN) main_test.out usr_tests.out
+	@rm -f $(OBJ)
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(TMAIN) $(LMAIN) main_test.out usr_tests.out
 
 re: fclean all
 

@@ -82,8 +82,8 @@ void	*ft_calloc(size_t nmemb, size_t size);
 void	*ft_memset(void *s, int c, size_t n);
 char	*ft_strdup(const char *s);
 size_t	ft_strlen(const char *str);
-void	ft_putchar_fd(int a, int fd);
-void	ft_putstr_fd(const char *str, int fd);
+void	ft_putchar(int a);
+void	ft_putstr(const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dsize);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 

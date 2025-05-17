@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../../ft_printf.h"
-#include <unistd.h>
 
 size_t	ft_strlen(const char *str)
 {
@@ -23,17 +22,17 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-void	ft_putchar_fd(int a, int fd)
+void	ft_putchar(int a)
 {
 	unsigned char	c;
 
 	c = (unsigned char) a;
-	write(fd, &c, 1);
+	write(1, &c, 1);
 }
 
-void	ft_putstr_fd(const char *str, int fd)
+void	ft_putstr(const char *str)
 {
-	write(fd, str, ft_strlen(str));
+	write(1, str, ft_strlen(str));
 }
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)

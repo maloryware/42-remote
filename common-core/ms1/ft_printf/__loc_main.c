@@ -12,6 +12,20 @@
 
 #include "ft_printf.h"
 
+/* #include "etc/stdlibs/mini_libft.c"
+#include "etc/stdlibs/substr.c"
+#include "etc/stdlibs/atoi.c"
+#include "etc/stdlibs/itoa.c"
+#include "etc/printers/print_char.c"
+#include "etc/printers/print_dec_int.c"
+#include "etc/printers/print_hex.c"
+#include "etc/printers/print_pointer.c"
+#include "etc/printers/print_string.c"
+#include "etc/printers/print_uint.c"
+#include "etc/format_delegator.c"
+#include "etc/aux.c"
+#include "ft_printf.c" */
+
 static void	title(char *title)
 {
 	printf("\n\n------------------\n");
@@ -34,11 +48,14 @@ int	main()
 	int		mine;
 	int		theirs;
 
+	void *ptr = malloc(3);
 	// final //
 	title("ft_printf FULL");
-	mine = ft_printf("\nTests (mine): \nInt - %021d\nChar - %-3c\nHex: %#.0x|%X", 128, '\200', 539, 539);
+	mine = ft_printf("\nTests (mine): \nInt - %021d\nChar - %-3c\nHex: %#.0x|%X\nPointer: %p\nString: %s",
+		128, '\200', 539, 539, ptr, "a string!");
 	lb();
-	theirs = printf("\nTests (they): \nInt - %021d\nChar - %-3c\nHex: %#.0x|%X", 128, '\200', 539, 539);
+	theirs = printf("\nTests (they): \nInt - %021d\nChar - %-3c\nHex: %#.0x|%X\nPointer: %p\nString: %s",
+		128, '\200', 539, 539, ptr, "a string!");
 	check(mine, theirs);
 	printf("\n");
 }

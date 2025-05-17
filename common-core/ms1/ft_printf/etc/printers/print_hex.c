@@ -86,7 +86,7 @@ int	print_hex(unsigned int hex, char hcase, t_flags *f)
 	if (f->pad_0x)
 		len += 2;
 	len = handle_padding(f, len, PAD_RIGHT);
-	ft_putstr_fd(out, 1);
+	ft_putstr(out);
 	free(out);
 	return (len);
 }
