@@ -6,38 +6,17 @@
 /*   By: Mal <malory@onenetbeyond.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 02:25:44 by Mal               #+#    #+#             */
-/*   Updated: 2025/05/20 11:02:08 by Mal              ###   ########.fr       */
+/*   Updated: 2025/05/20 16:07:34 by Mal              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static void	title(char *title)
-{
-	printf("\n\n------------------\n");
-	printf("Testing %s:", title);
-	printf("\n------------------\n");
-}
-
-static void	lb(void)
-{
-	printf("|EOL\n");
-}
-
-static void check(int mine, int theirs)
-{
-	printf("|EOL\n\nmine: %d, theirs: %d", mine, theirs);
-}
+#include <stdio.h>
 
 int main()
 {
-	int mine;
-	int theirs;
-	// Paste user-made tests here!
-	title("ft_printf FULL");
-	mine = ft_printf("Your input here\n");
-	lb();
-	theirs = printf("Your input here\n");
-	check(mine, theirs);
-	printf("\n");
+	// something something main very muito fixe - vinny aka idfk shrug
+	char *var = "There was a time I used to scratch my nuts and it didn't bleed";
+	printf("\n\n%-114s!!!\n", var);
+	ft_printf("\n\n%-114s!!!\n", var);
 }
