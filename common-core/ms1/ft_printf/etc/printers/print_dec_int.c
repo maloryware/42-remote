@@ -21,7 +21,13 @@ int	print_dec_int(int n, t_pdata *flags)
 		flags->padding_length = flags->precision;
 	out = ft_itoa(n);
 	len = ft_strlen(out);
+	if (n >= 0 && (flags->force_sign || flags->space_for_sign))
+		len++;
 	len = handle_padding(flags, len, PAD_LEFT);
+	if (n >= 0 && flags->space_for_sign)
+		ft_putchar(' ');
+	if (n >= 0 && flags->force_sign)
+		ft_putchar('+');
 	write(1, out, ft_strlen(out));
 	len = handle_padding(flags, len, PAD_RIGHT);
 	free(out);

@@ -62,7 +62,13 @@ int	print_uint(unsigned int uint, t_pdata *flags)
 		flags->padding_length = flags->precision;
 	out = utoa(uint);
 	len = ft_strlen(out);
+	if (flags->force_sign || flags->space_for_sign)
+		len++;
 	len = handle_padding(flags, len, PAD_LEFT);
+	if (flags->space_for_sign)
+		ft_putchar(' ');
+	if (flags->force_sign)
+		ft_putchar('+');
 	write(1, out, ft_strlen(out));
 	len = handle_padding(flags, len, PAD_RIGHT);
 	free(out);
