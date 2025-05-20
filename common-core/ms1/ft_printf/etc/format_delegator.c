@@ -58,6 +58,9 @@ int	handle_flags(
 	t_pdata *f
 )
 {
+	int		i;
+	char	*tmp;
+
 	while (matches(format[pos], "#0-+ ."))
 	{
 		f->pad_0x = (format[pos] == '#' || f->pad_0x);
@@ -67,7 +70,17 @@ int	handle_flags(
 				&& !f->force_sign);
 		f->zero_pad = ((format[pos] == '0' || f->zero_pad)
 				&& !f->padding_side);
+		f->has_precision = ((format[pos] == '.' || f->has_precision));
 		pos++;
+		if (format[pos - 1] == '.')
+		{
+			i = 0;
+			while (matches(format[pos + i], "0123456789"))
+				i++;
+			tmp = ft_substr(format, pos, pos + i);
+			f->precision = atoi(tmp);
+			free(tmp);
+		}
 	}
 	return (pos);
 }

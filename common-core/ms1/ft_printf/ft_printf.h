@@ -6,7 +6,7 @@
 /*   By: Mal <malory@onenetbeyond.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 02:09:20 by Mal               #+#    #+#             */
-/*   Updated: 2025/05/17 02:09:22 by Mal              ###   ########.fr       */
+/*   Updated: 2025/05/20 14:55:10 by Mal              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ typedef struct s_pdata
 	int		padding_length;
 	int		len;
 	int		early_break;
+	int		precision;
+	int		has_precision;
 }	t_pdata;
 
 t_pdata	*fl_init(void);
