@@ -6,7 +6,7 @@
 /*   By: Mal <malory@onenetbeyond.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 02:25:44 by Mal               #+#    #+#             */
-/*   Updated: 2025/05/13 02:27:26 by Mal              ###   ########.fr       */
+/*   Updated: 2025/05/20 11:02:08 by Mal              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int main()
 	int theirs;
 	// Paste user-made tests here!
 	title("ft_printf FULL");
-	mine = ft_printf("\nTests (mine): \nInt - %021d\nChar - %-3c\nHex: %#.0x|%X", 128, '\200', 539, 539);
+	mine = ft_printf("Your input here\n");
 	lb();
-	theirs = printf("\nTests (they): \nInt - %021d\nChar - %-3c\nHex: %#.0x|%X", 128, '\200', 539, 539);
+	theirs = printf("Your input here\n");
 	check(mine, theirs);
 	printf("\n");
 }
