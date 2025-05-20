@@ -6,7 +6,7 @@
 /*   By: Mal <malory@onenetbeyond.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 17:36:42 by jomunoz           #+#    #+#             */
-/*   Updated: 2025/05/16 22:46:54 by Mal              ###   ########.fr       */
+/*   Updated: 2025/05/20 11:42:30 by Mal              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int main(void)
 	while ((line = get_next_line(fd)) != NULL)
 	{
 		printf("%s", line);
-		free(line);
+		free(line); 
 	}
 	return (0);
 }

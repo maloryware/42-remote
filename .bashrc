@@ -1,5 +1,6 @@
 export PS1="\[$(tput setaf 165)\]mal\[$(tput setaf 171)\]@\[$(tput setaf 213)\]42 | \D{%H:%M:%S} | \[$(tput setaf 219)\]\w \[$(tput sgr0)\]$ "
 export LS_COLORS="no=92:di=31:ln=35:so=32:pi=33:ex=1;34:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
+export PATH=$PATH:~/shcustom
 gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false
 
 alias q="exit"
@@ -133,4 +134,4 @@ alias ..="godown"
 
 alias nrm="norminette -R CheckForbiddenSourceHeader"
 alias bye="gp && gnome-session-quit --force"
-alias qbye="gnome-session-quit --force"
+alias logout="gnome-session-quit --force"
