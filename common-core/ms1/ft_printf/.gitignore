@@ -1,0 +1,5 @@
+__loc_main.c
+*.out
+usr_tests.c
+output/
+build/

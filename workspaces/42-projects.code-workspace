@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../../42-remote"
+		},
+		{
+			"path": "../../shcustom"
 		}
 	],
 	"settings": {}

@@ -1,8 +1,11 @@
 export PS1="\[$(tput setaf 165)\]mal\[$(tput setaf 171)\]@\[$(tput setaf 213)\]42 | \D{%H:%M:%S} | \[$(tput setaf 219)\]\w \[$(tput sgr0)\]$ "
 export LS_COLORS="no=92:di=31:ln=35:so=32:pi=33:ex=1;34:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 export PATH=$PATH:~/shcustom
+source ~/.zshrc
 gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false
 
+alias py="python3"
+alias prep="cd ~/42-projects/prep"
 alias q="exit"
 alias ls="ls --color=always"
 alias lss="ls --color=never"
