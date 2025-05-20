@@ -58,6 +58,8 @@ int	print_uint(unsigned int uint, t_pdata *flags)
 	char	*out;
 	int		len;
 
+	if (flags->has_precision)
+		flags->padding_length = flags->precision;
 	out = utoa(uint);
 	len = ft_strlen(out);
 	len = handle_padding(flags, len, PAD_LEFT);
