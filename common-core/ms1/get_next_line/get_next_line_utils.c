@@ -6,7 +6,7 @@
 /*   By: Mal <malory@onenetbeyond.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 21:34:32 by Mal               #+#    #+#             */
-/*   Updated: 2025/05/20 21:34:33 by Mal              ###   ########.fr       */
+/*   Updated: 2025/05/21 15:48:29 by Mal              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_strchr(const char *s, int b)
 	return (NULL);
 }
 
-char	*full_line(char *full_line, char *file_str)
+char	*full_line(char *out, char *arr)
 {
 	int		i;
 	int		j;
@@ -50,23 +50,23 @@ char	*full_line(char *full_line, char *file_str)
 
 	i = 0;
 	j = -1;
-	while (file_str[i] != '\0' && file_str[i] != '\n')
+	while (arr[i] != '\0' && arr[i] != '\n')
 		i++;
-	if (file_str[i] == '\n')
+	if (arr[i] == '\n')
 		i++;
 	temp = malloc(i + 1);
 	if (!temp)
 		return (NULL);
 	while (++j < i)
-		temp[j] = file_str[j];
+		temp[j] = arr[j];
 	temp[j] = '\0';
 	j = 0;
-	while (file_str[i] != '\0')
-		file_str[j++] = file_str[i++];
-	file_str[j] = '\0';
-	full_line = ft_strjoin(full_line, temp);
+	while (arr[i] != '\0')
+		arr[j++] = arr[i++];
+	arr[j] = '\0';
+	out = ft_strjoin(out, temp);
 	free(temp);
-	return (full_line);
+	return (out);
 }
 
 char	*ft_strjoin(char *s1, char *s2)

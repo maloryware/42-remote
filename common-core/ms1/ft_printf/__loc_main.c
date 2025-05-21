@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-#include "etc/stdlibs/mini_libft.c"
+/* #include "etc/stdlibs/mini_libft.c"
 #include "etc/stdlibs/substr.c"
 #include "etc/stdlibs/atoi.c"
 #include "etc/stdlibs/itoa.c"
@@ -24,7 +24,7 @@
 #include "etc/printers/print_uint.c"
 #include "etc/format_delegator.c"
 #include "etc/aux.c"
-#include "ft_printf.c"
+#include "ft_printf.c" */
 
 static void	title(char *title)
 {

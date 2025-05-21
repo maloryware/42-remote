@@ -6,7 +6,7 @@
 /*   By: Mal <malory@onenetbeyond.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 21:34:43 by Mal               #+#    #+#             */
-/*   Updated: 2025/05/20 21:34:44 by Mal              ###   ########.fr       */
+/*   Updated: 2025/05/21 15:47:50 by Mal              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ char	*get_next_line(int fd);
 size_t	ft_strlen(const char *str);
 char	*ft_strchr(const char *s, int b);
 char	*ft_strjoin(char *s1, char *s2);
-char	*full_line(char *full_line, char *file_str);
+char	*full_line(char *oug, char *arr);
 
 #endif
