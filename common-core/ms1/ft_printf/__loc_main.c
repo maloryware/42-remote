@@ -51,10 +51,10 @@ int	main()
 	void *ptr = malloc(3);
 	// final //
 	title("ft_printf FULL");
-	mine = ft_printf("\nTests (mine): \ni - %021d\nc - %-3c\nh: %#.0x|%X\np: %p\ns: %13.4s\nu: %u\n%c: %%\n",
+	mine = ft_printf("\nTests (mine): \ni - %2.15d\nc - %-3c\nh: %#.0x|%X\np: %p\ns: %13.4s\nu: %u\n%c: %%\n",
 		128, '\200', 539, 539, ptr, "a string!", 429496729, '%');
 	lb();
-	theirs = printf("\nTests (they): \ni - %021d\nc - %-3c\nh: %#.0x|%X\np: %p\ns: %13.4s\nu: %u\n%c: %%\n",
+	theirs = printf("\nTests (they): \ni - %2.15d\nc - %-3c\nh: %#.0x|%X\np: %p\ns: %13.4s\nu: %u\n%c: %%\n",
 		128, '\200', 539, 539, ptr, "a string!", 429496729, '%');
 	check(mine, theirs);
 	printf("\n");

@@ -18,7 +18,11 @@ int	print_dec_int(int n, t_pdata *flags)
 	int		len;
 
 	if (flags->has_precision)
+	{
 		flags->padding_length = flags->precision;
+		flags->zero_pad = TRUE;
+		flags->padding_side = PAD_LEFT;
+	}
 	out = ft_itoa(n);
 	len = ft_strlen(out);
 	if (n >= 0 && (flags->force_sign || flags->space_for_sign))
