@@ -6,7 +6,7 @@
 /*   By: Mal <malory@onenetbeyond.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 02:25:44 by Mal               #+#    #+#             */
-/*   Updated: 2025/05/23 03:19:56 by Mal              ###   ########.fr       */
+/*   Updated: 2025/05/23 03:20:32 by Mal              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int main()
 	theirs = printf("%-+13.5d\n", vini_gostoso);
 	mine = ft_printf("%-+13.5d\n", vini_gostoso);
 	check(mine, theirs);
-	theirs = printf("% -23.5d\n", vini_gostoso);
-	mine = ft_printf("% -23.5d\n", vini_gostoso);
+	theirs = printf("% -43.25d\n", vini_gostoso);
+	mine = ft_printf("% -43.25d\n", vini_gostoso);
 	check(mine, theirs);
 
 	unsigned int	hashitagui = 3e8;

@@ -23,20 +23,17 @@ static int	handle_plus_space(int n, t_pdata *flags, int side)
 	return (flags->force_sign | flags->space_for_sign);
 }
 
-static void	putchar_looper(int a, int count)
+static int	extra_flags(int len, t_pdata *flags, unsigned int n, int phase)
 {
-	unsigned char	c;
+	int	count;
 
-	c = (unsigned char) a;
-	while (count-- > 0)
-		write(1, &c, 1);
-}
-
-static int	extra_flags(int len, t_pdata *flags, int n, int phase)
-{
 	len += handle_plus_space(n, flags, phase);
 	if (phase == 1)
-		putchar_looper('0', flags->precision);
+	{
+		count = flags->precision;
+		while (count-- > 0)
+			write(1, "0", 1);
+	}
 	return (len);
 }
 
