@@ -6,7 +6,7 @@
 /*   By: Mal <malory@onenetbeyond.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 21:34:25 by Mal               #+#    #+#             */
-/*   Updated: 2025/05/20 21:34:26 by Mal              ###   ########.fr       */
+/*   Updated: 2025/05/23 00:20:18 by Mal              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,7 @@ char	*full_line(char *full_line, char *file_str)
 
 	i = 0;
 	j = -1;
-	while (file_str[i] != '\0' && file_str[i] != '\n')
-		i++;
-	if (file_str[i] == '\n')
+	while (file_str[i] != '\0' && file_str[i - 1] != '\n')
 		i++;
 	temp = malloc(i + 1);
 	if (!temp)
