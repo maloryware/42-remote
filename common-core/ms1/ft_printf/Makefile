@@ -7,7 +7,7 @@ ETC = etc
 LIBS = $(ETC)/stdlibs
 PRNT = $(ETC)/printers
 
-LMAIN = __loc_main.c
+LMAIN = __main_tests.c
 TMAIN = __usr_tests.c
 
 # ------------- #
@@ -47,33 +47,33 @@ list: $(NAME)
 	@ar -t $(NAME) | sed 's/\.o/.c/g' | awk '{print "#include \"" $$1 "\""}'
 
 run: lmain $(NAME)
-	$(CC) $(CFLAGS) -o test_main.out $(LMAIN) $(NAME)
+	$(CC) $(CFLAGS) -o main_test.out $(LMAIN) $(NAME)
 	@make clean
 	@echo 
 	@echo '|-----TEST-----|'
 	@echo 
-	@./test_main.out
+	@./main_test.out
 	@echo
 	@echo
 	@echo '|-----TEST-----|'
 	@echo
 
 test: $(NAME) tmain
-	cc $(CFLAGS) -fsanitize=address -g -ggdb3 -o test_usr.out $(TMAIN) $(NAME)
+	cc $(CFLAGS) -fsanitize=address -g -ggdb3 -o usr_test.out $(TMAIN) $(NAME)
 	@make clean
-	@./test_usr.out
+	@./usr_test.out
 
 debug: $(NAME) run
-	cc $(CFLAGS) -fsanitize=address -g -ggdb3 -o test_main.out $(LMAIN) $(NAME)
+	cc $(CFLAGS) -fsanitize=address -g -ggdb3 -o main_test.out $(LMAIN) $(NAME)
 	@make clean
-	@$(VALGRIND) ./test_main.out
+	@$(VALGRIND) ./main_test.out
 	@echo
 	@echo
 	@echo
 	@echo
 	@echo
 	@echo
-	@./test_main.out
+	@./main_test.out
 
 lmain: $(LMAIN)
 
@@ -89,7 +89,7 @@ clean:
 	@rm -f $(OBJ)
 
 fclean: clean
-	@rm -f $(NAME) $(TMAIN) $(LMAIN) test_usr.out test_main.out
+	@rm -f $(NAME) $(TMAIN) $(LMAIN) usr_test.out main_test.out
 
 re: fclean all
 
