@@ -57,5 +57,13 @@ int	main()
 	theirs = printf("\nTests (they): \ni - %2.15d\nc - %-3c\nh: %#.0x|%X\np: %p\ns: %13.4s\nu: %u\n%c: %%\n",
 		128, '\200', 539, 539, ptr, "a string!", 429496729, '%');
 	check(mine, theirs);
-	printf("\n");
+	
+	title("ft_printf mini");
+	mine = ft_printf("\nTests (mine): \nh: %#.0x|%X\np: %p\ns: %13.4s\nu: %u\n%c: %%\n",
+		539, 539, ptr, "a string!", 429496729, '%');
+	lb();
+	theirs = printf("\nTests (they): \nh: %#.0x|%X\np: %p\ns: %13.4s\nu: %u\n%c: %%\n",
+		539, 539, ptr, "a string!", 429496729, '%');
+	check(mine, theirs);
+	
 }
