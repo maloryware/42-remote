@@ -6,7 +6,7 @@
 /*   By: Mal <malory@onenetbeyond.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 02:25:44 by Mal               #+#    #+#             */
-/*   Updated: 2025/05/28 01:12:46 by Mal              ###   ########.fr       */
+/*   Updated: 2025/05/28 01:14:57 by Mal              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ static void	check(int mine, int theirs)
 {
 	printf("theirs: %d, mine: %d\n\n", theirs, mine);
 	if (mine == theirs)
-		printf("\nno count diff! :D\n");
+		printf("no count diff! :D\n\n\n");
 	else
-		printf("\n--> DIFF DETECTED: %d\n", mine - theirs);
+		printf("--> DIFF DETECTED: %d\n\n\n", mine - theirs);
 }
 
 int main()

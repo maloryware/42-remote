@@ -42,9 +42,9 @@ static void check(int mine, int theirs)
 {
 	printf("|EOL\n\nmine: %d, theirs: %d", mine, theirs);
 	if (mine == theirs)
-		printf("\nno count diff! :D\n");
+		printf("no count diff! :D\n\n\n");
 	else
-		printf("\n--> DIFF DETECTED: %d\n", mine - theirs);
+		printf("--> DIFF DETECTED: %d\n\n\n", mine - theirs);
 }
 
 int	main()
