@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-/* #include "etc/stdlibs/mini_libft.c"
+#include "etc/stdlibs/mini_libft.c"
 #include "etc/stdlibs/substr.c"
 #include "etc/stdlibs/atoi.c"
 #include "etc/stdlibs/itoa.c"
@@ -24,7 +24,8 @@
 #include "etc/printers/print_uint.c"
 #include "etc/format_delegator.c"
 #include "etc/aux.c"
-#include "ft_printf.c" */
+#include "ft_printf.c"
+#include <stdio.h>
 
 static void	title(char *title)
 {
@@ -42,24 +43,14 @@ static void check(int mine, int theirs)
 {
 	printf("|EOL\n\nmine: %d, theirs: %d", mine, theirs);
 	if (mine == theirs)
-		printf("\nno count diff! :D\n");
+		printf("no count diff! :D\n\n\n");
 	else
-		printf("\n--> DIFF DETECTED: %d\n", mine - theirs);
+		printf("--> DIFF DETECTED: %d\n\n\n", mine - theirs);
 }
 
 int	main()
 {
-	int		mine;
-	int		theirs;
-
-	void *ptr = malloc(3);
-	// final //
-	title("ft_printf FULL");
-	mine = ft_printf("\nTests (mine): \ni - %2.15d\nc - %-3c\nh: %#.0x|%X\np: %p\ns: %13.4s\nu: %u\n%c: %%\n",
-		128, '\200', 539, 539, ptr, "a string!", 429496729, '%');
-	lb();
-	theirs = printf("\nTests (they): \ni - %2.15d\nc - %-3c\nh: %#.0x|%X\np: %p\ns: %13.4s\nu: %u\n%c: %%\n",
-		128, '\200', 539, 539, ptr, "a string!", 429496729, '%');
-	check(mine, theirs);
-	printf("\n");
+	int mine = ft_printf("%18.413d\n", 116);
+	int theirs = printf("%18.413d\n", 116);
+	printf("final: %d, expected: %d\n", mine, theirs);
 }
