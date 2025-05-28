@@ -6,7 +6,7 @@
 /*   By: Mal <malory@onenetbeyond.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 02:25:44 by Mal               #+#    #+#             */
-/*   Updated: 2025/05/28 01:08:02 by Mal              ###   ########.fr       */
+/*   Updated: 2025/05/28 01:09:25 by Mal              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,15 @@
 #include "etc/format_delegator.c"
 #include "etc/aux.c"
 #include "ft_printf.c" */
+#include <stdio.h>
 
 static void	check(int mine, int theirs)
 {
 	printf("theirs: %d, mine: %d\n\n", theirs, mine);
+	if (mine == theirs)
+		printf("no count diff! :D");
+	else
+	 	printf("--> DIFF DETECTED: %d", mine - theirs);
 }
 
 int main()

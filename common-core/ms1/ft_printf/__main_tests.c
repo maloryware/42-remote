@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   __main_tests.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Mal <malory@onenetbeyond.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -41,6 +41,10 @@ static void	lb(void)
 static void check(int mine, int theirs)
 {
 	printf("|EOL\n\nmine: %d, theirs: %d", mine, theirs);
+	if (mine == theirs)
+		printf("\nno count diff! :D");
+	else
+		printf("\n--> DIFF DETECTED: %d", mine - theirs);
 }
 
 int	main()
