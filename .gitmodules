@@ -1,0 +1,3 @@
+[submodule "common-core/test/get_next_line"]
+	path = common-core/test/get_next_line
+	url = git@vogsphere.42lisboa.com:vogsphere/intra-uuid-ff0733e1-38d9-4d91-9b85-13fb4f880725-6584183-malpache

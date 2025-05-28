@@ -6,7 +6,7 @@
 /*   By: Mal <malory@onenetbeyond.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 02:25:44 by Mal               #+#    #+#             */
-/*   Updated: 2025/05/26 19:06:05 by Mal              ###   ########.fr       */
+/*   Updated: 2025/05/28 01:08:02 by Mal              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ int main()
 	theirs = printf("%#x\n", hashitagui);
 	mine = ft_printf("%#x\n", hashitagui);
 	check(mine, theirs);
-
-	
 
 	printf("Obrigado vini por me ajudar tenho muita dificuldade :D <3 nya~\n");
 }
