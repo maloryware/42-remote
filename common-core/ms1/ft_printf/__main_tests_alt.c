@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-#include "etc/stdlibs/mini_libft.c"
+/* #include "etc/stdlibs/mini_libft.c"
 #include "etc/stdlibs/substr.c"
 #include "etc/stdlibs/atoi.c"
 #include "etc/stdlibs/itoa.c"
@@ -24,7 +24,7 @@
 #include "etc/printers/print_uint.c"
 #include "etc/format_delegator.c"
 #include "etc/aux.c"
-#include "ft_printf.c"
+#include "ft_printf.c" */
 #include <stdio.h>
 
 static void	title(char *title)
@@ -50,7 +50,7 @@ static void check(int mine, int theirs)
 
 int	main()
 {
-	int mine = ft_printf("%18.413d\n", 116);
-	int theirs = printf("%18.413d\n", 116);
+	int mine = ft_printf("%18d\n", 116);
+	int theirs = printf("%18d\n", 116);
 	printf("final: %d, expected: %d\n", mine, theirs);
 }

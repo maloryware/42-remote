@@ -50,7 +50,8 @@ int	print_dec_int(int n, t_pdata *flags)
 
 	out = ft_itoa(n);
 	original_length = ft_strlen(out);
-	flags->precision -= original_length;
+	if (flags-> has_precision)
+		flags->precision -= original_length;
 	len = extra_flags(original_length, flags, n, 0);
 	len = handle_padding(flags, len + flags->precision, PAD_LEFT);
 	len = extra_flags(len, flags, n, 1);
